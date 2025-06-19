@@ -84,105 +84,223 @@ body {
 /* Hero Section */
 .hero {
     padding: 120px 0 80px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
 }
 
-.hero-content h1 {
-    font-size: 48px;
+.hero-content {
+    position: relative;
+}
+
+.hero-title {
+    font-size: 56px;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 24px;
-    color: #1d1d1f;
+    color: #ffffff;
+    animation: fadeInUp 1s ease-out;
 }
 
-.hero-content p {
-    font-size: 20px;
-    color: #666;
-    margin-bottom: 32px;
-    line-height: 1.5;
+.hero-subtitle {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    line-height: 1.6;
+    animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: #007aff;
-    color: white;
-    padding: 16px 32px;
-    border-radius: 12px;
+    background-color: #ffffff;
+    color: #667eea;
+    padding: 18px 36px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     font-size: 18px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out 0.4s both, pulse 3s ease-in-out 2s infinite;
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 122, 255, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    background-color: #f8f9ff;
 }
 
-.game-interface-mockup {
-    background-color: white;
-    border-radius: 20px;
-    padding: 0;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+/* Floating Icons Animation */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 
-.mockup-header {
-    background-color: #f6f6f6;
-    padding: 16px 20px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.mockup-dots {
-    display: flex;
-    gap: 8px;
-}
-
-.mockup-dots span {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #ddd;
-}
-
-.mockup-dots span:first-child {
-    background-color: #ff5f57;
-}
-
-.mockup-dots span:nth-child(2) {
-    background-color: #ffbd2e;
-}
-
-.mockup-dots span:last-child {
-    background-color: #28ca42;
-}
-
-.mockup-content {
-    padding: 40px 30px;
-    text-align: center;
-}
-
-.mockup-content h3 {
+.floating-icon {
+    position: absolute;
     font-size: 24px;
-    margin-bottom: 12px;
-    color: #1d1d1f;
+    opacity: 0.7;
+    animation: float 6s ease-in-out infinite;
 }
 
-.mockup-content p {
-    color: #666;
-    font-size: 16px;
+.floating-icon:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-icon:nth-child(2) {
+    top: 60%;
+    left: 85%;
+    animation-delay: 1s;
+}
+
+.floating-icon:nth-child(3) {
+    top: 30%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.floating-icon:nth-child(4) {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 3s;
+}
+
+.floating-icon:nth-child(5) {
+    top: 70%;
+    left: 15%;
+    animation-delay: 4s;
+}
+
+.floating-icon:nth-child(6) {
+    bottom: 20%;
+    right: 25%;
+    animation-delay: 5s;
+}
+
+/* Background Animation Shapes */
+.bg-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: moveShape 20s infinite linear;
+}
+
+.shape-1 {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: -5%;
+    animation-duration: 25s;
+}
+
+.shape-2 {
+    width: 120px;
+    height: 120px;
+    top: 70%;
+    right: -10%;
+    animation-duration: 30s;
+    animation-direction: reverse;
+}
+
+.shape-3 {
+    width: 60px;
+    height: 60px;
+    top: 40%;
+    left: 80%;
+    animation-duration: 35s;
+}
+
+.shape-4 {
+    width: 100px;
+    height: 100px;
+    bottom: 10%;
+    left: 10%;
+    animation-duration: 28s;
+    animation-direction: reverse;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+@keyframes moveShape {
+    0% {
+        transform: translateX(-100px) translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateX(100px) translateY(-50px) rotate(90deg);
+    }
+    50% {
+        transform: translateX(200px) translateY(0px) rotate(180deg);
+    }
+    75% {
+        transform: translateX(100px) translateY(50px) rotate(270deg);
+    }
+    100% {
+        transform: translateX(-100px) translateY(0px) rotate(360deg);
+    }
+}
+
+/* Pulse animation for CTA button */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4);
+    }
+    100% {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
 }
 
 /* Features Section */
