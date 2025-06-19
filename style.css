@@ -614,18 +614,30 @@ body {
     margin-bottom: 8px;
 }
 
-.linkedin-link {
-    display: inline-block;
-    margin-top: 20px;
-    color: #007aff;
+.linkedin-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #0077b5;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 119, 181, 0.3);
 }
 
-.linkedin-link:hover {
-    color: #0056b3;
+.linkedin-button:hover {
+    background-color: #005885;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 119, 181, 0.4);
+}
+
+.linkedin-button svg {
+    width: 24px;
+    height: 24px;
 }
 
 /* Footer */
